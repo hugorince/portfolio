@@ -1,4 +1,5 @@
 import { useState } from "react";
+import React from "react";
 
 const question1 = ['geography', 'videogame'];
 const question2 = ['map', 'quiz'];
@@ -48,20 +49,23 @@ const Quiz = ({state, onShow}) => {
 
     return (
         <>
+        
         <div style={{display: state ? 'none' : 'block'}}>
-            <div style={{display: showQuiz ? 'block' : 'none'}}>
-            <div className="flex flex-col space-y-4 h-screen justify-center items-center" >
-                <h1 className="text-3xl font-bold">Hey, let's play !</h1>
-                <h2 className="text-2xl font-bold italic">Do you prefer</h2>
-                <div className="flex space-x-4 justify-center items-center">
-                    <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" value={option1} onClick={nextQuestion}>{option1}</button>
-                    <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" value={option2} onClick={nextQuestion}>{option2}</button>
+            <div className="h-screen flex space-y-4 flex-col justify-center items-center">
+                <div style={{display: showQuiz ? 'block' : 'none'}}>
+                    <div className="flex flex-col space-y-4 justify-center items-center" >
+                        <h1 className="text-3xl font-bold">Hey, let's play !</h1>
+                        <h2 className="text-2xl font-bold italic">Do you prefer</h2>
+                        <div className="flex space-x-4 justify-center items-center">
+                            <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" value={option1} onClick={nextQuestion}>{option1}</button>
+                            <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" value={option2} onClick={nextQuestion}>{option2}</button>
+                        </div>
+                    </div>
                 </div>
-            </div>
-            </div>
-            <div className="flex flex-col space-y-4 h-screen justify-center items-center">
-                <h3>{quizResult}</h3>
-                <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={resetQuiz} style={{display: buttonPort ? 'block' : 'none'}}>Portfolio</button>
+                <div className="flex flex-col space-y-4 justify-center items-center">
+                    <h3>{quizResult}</h3>
+                    <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={resetQuiz} style={{display: buttonPort ? 'block' : 'none'}}>Portfolio</button>
+                </div>
             </div>
         </div>
         </>
