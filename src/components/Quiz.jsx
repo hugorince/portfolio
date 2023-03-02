@@ -1,5 +1,6 @@
 import { useState } from "react";
 import React from "react";
+import QuizResult from "./QuizResult";
 
 const question1 = ['geography', 'videogame'];
 const question2 = ['map', 'quiz'];
@@ -49,7 +50,6 @@ const Quiz = ({state, onShow}) => {
 
     return (
         <>
-        
         <div style={{display: state ? 'none' : 'block'}}>
             <div className="h-screen flex space-y-4 flex-col justify-center items-center">
                 <div style={{display: showQuiz ? 'block' : 'none'}}>
@@ -62,9 +62,8 @@ const Quiz = ({state, onShow}) => {
                         </div>
                     </div>
                 </div>
-                <div className="flex flex-col space-y-4 justify-center items-center">
-                    <h3>{quizResult}</h3>
-                    <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" onClick={resetQuiz} style={{display: buttonPort ? 'block' : 'none'}}>Portfolio</button>
+                <div style={{display: buttonPort ? 'block' : 'none'}}>
+                    <QuizResult quizResult={quizResult} resetQuiz={resetQuiz}/>
                 </div>
             </div>
         </div>
