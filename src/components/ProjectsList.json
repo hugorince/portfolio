@@ -1,0 +1,20 @@
+[
+    { 
+        "id": 1,
+        "name": "How Many Capitals",
+        "href": "https://hugorince.github.io",
+        "img": "images/howmanycapitals.png"
+    },
+    { 
+        "id": 2,
+        "name": "Social Animals",
+        "href": "https://hugorince.github.io",
+        "img": "images/socialanimals.png"
+    },
+    { 
+        "id": 3,
+        "name": "Climate Change in South America",
+        "href": "https://hugorince.github.io",
+        "img": "images/dataviz.png"
+    }
+]
