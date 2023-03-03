@@ -1,21 +1,27 @@
 import ProjectsItems from "./ProjectsItems"
+import ProjectModal from "./ProjectModal"
+import { useState } from "react"
 
 export default function Projects() {
+    const [projectClicked, setProjectClicked] = useState(false)
+    const [reponse, setReponse] = useState('');
 
     return (
         <>
-        <div id="projects"  className="flex flex-col space-y-8 h-screen justify-center items-center">
-                <ProjectsItems />
-            <div id="project-line" className="flex space-x-8">
-                <div className="flex flex-col w-52 h-52 items-center justify-center border-solid border-2 border-indigo-600 hover:opacity-70">
-                <img src="images/timetracker.png" className="object-scale-down w-48 h-48" alt="" />
-                </div>
-                <div className="flex flex-col w-52 h-52 items-center justify-center border-solid border-2 border-indigo-600 hover:opacity-70">
-                    <p>Project 5</p>
-                </div>
-                <div className="flex flex-col w-52 h-52 items-center justify-center border-solid border-2 border-indigo-600 hover:opacity-70">
-                    <p>Project 6</p>
-                </div>
+        <div id="projects" className="flex flex-col space-y-8 h-screen justify-center items-center">
+            <div style={{display: projectClicked ? 'block' : 'none'}}>
+                <ProjectModal
+                projectView={reponse} 
+                modalClicked={()=>
+                setProjectClicked(false)
+                }/>
+            </div>
+            <div style={{display: projectClicked ? 'none' : 'block'}}>
+                <ProjectsItems 
+                projectClicked={(name)=>{
+                    setReponse(name)
+                    setProjectClicked(true)
+                }}/>
             </div>
         </div>
         </>
