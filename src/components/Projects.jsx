@@ -1,6 +1,7 @@
 import ProjectsItems from "./ProjectsItems"
 import ProjectModal from "./ProjectModal"
-import { useState } from "react"
+import { Fragment, useState } from "react"
+import { Dialog, Transition } from '@headlessui/react'
 
 export default function Projects() {
     const [projectClicked, setProjectClicked] = useState(false)
@@ -9,21 +10,53 @@ export default function Projects() {
     return (
         <>
         <div id="projects" className="flex flex-col space-y-8 h-screen justify-center items-center">
-            <div style={{display: projectClicked ? 'block' : 'none'}}>
-                <ProjectModal
-                projectView={reponse} 
-                modalClicked={()=>
-                setProjectClicked(false)
-                }/>
-            </div>
-            <div style={{display: projectClicked ? 'none' : 'block'}}>
                 <ProjectsItems 
                 projectClicked={(name)=>{
                     setReponse(name)
                     setProjectClicked(true)
                 }}/>
-            </div>
         </div>
+
+        <Transition appear show={projectClicked} as={Fragment}>
+            <Dialog as="div" className="relative z-10" 
+                onClose={
+                ()=>setProjectClicked(false)}
+                >
+                <Transition.Child
+                    as={Fragment}
+                    enter="ease-out duration-300"
+                    enterFrom="opacity-0"
+                    enterTo="opacity-100"
+                    leave="ease-in duration-200"
+                    leaveFrom="opacity-100"
+                    leaveTo="opacity-0"
+                >
+                    <div className="fixed inset-0 bg-black bg-opacity-25" />
+                </Transition.Child>
+
+                <div className="fixed inset-0 overflow-y-auto">
+                    <div className="flex min-h-full items-center justify-center p-4 text-center">
+                    <Transition.Child
+                        as={Fragment}
+                        enter="ease-out duration-300"
+                        enterFrom="opacity-0 scale-95"
+                        enterTo="opacity-100 scale-100"
+                        leave="ease-in duration-200"
+                        leaveFrom="opacity-100 scale-100"
+                        leaveTo="opacity-0 scale-95"
+                    >
+                        <Dialog.Panel className="w-full max-w-md transform overflow-hidden bg-white p-64 text-left align-middle shadow-xl transition-all">
+                            <ProjectModal
+                            projectView={reponse} 
+                            modalClosed={()=>{
+                                setProjectClicked(false)
+                            }}/>
+                        </Dialog.Panel>
+                    </Transition.Child>
+                    </div>
+                </div>
+            </Dialog>
+        </Transition>
         </>
     )
 };
