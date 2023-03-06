@@ -4,13 +4,16 @@ import QuizResult from "./QuizResult";
 import ProjectModal from "./ProjectModal";
 import { Dialog, Transition } from '@headlessui/react'
 
-const question1 = ['geography', 'videogame'];
+const question1 = ['geography', 'videogame', 'counting'];
 const question2 = ['map', 'quiz'];
 const question3 = ['quiz', 'retro'];
+const question4 = ['animals', 'time'];
 
 const Quiz = ({state, onShow}) => {
     const [option1, setOption1] = useState(question1[0])
     const [option2, setOption2] = useState(question1[1])
+    const [option3, setOption3] = useState(question1[2])
+    const [firstQuest, setFirstQuest] = useState(true)
     const [showQuiz, setShowQuiz] = useState(true)
     const [quizResult, setQuizResult] = useState('')
     const [buttonPort, setButtonPort] = useState(false)
@@ -26,9 +29,12 @@ const Quiz = ({state, onShow}) => {
         onShow()
         setQuizProj('')
         setShowResult(false)
+        setFirstQuest(true)
     }
 
     const nextQuestion = (event) => {
+
+        setFirstQuest(false)
         if (event.target.value === 'geography'){
             setOption1(question2[0])
             setOption2(question2[1])
@@ -36,6 +42,10 @@ const Quiz = ({state, onShow}) => {
         else if (event.target.value === 'videogame'){
             setOption1(question3[0])
             setOption2(question3[1])
+        }
+        else if (event.target.value === 'counting'){
+            setOption1(question4[0])
+            setOption2(question4[1])
         }
         else if (event.target.value === 'quiz'){
             setShowQuiz(false)
@@ -52,6 +62,16 @@ const Quiz = ({state, onShow}) => {
             setButtonPort(true)
             setQuizResult('CODEV-22')
         }
+        else if (event.target.value === 'time'){
+            setShowQuiz(false)
+            setButtonPort(true)
+            setQuizResult('Time Tracker')
+        }
+        else if (event.target.value === 'animals'){
+            setShowQuiz(false)
+            setButtonPort(true)
+            setQuizResult('Social Animals')
+        }
     }
 
     return (
@@ -61,10 +81,13 @@ const Quiz = ({state, onShow}) => {
                 <div style={{display: showQuiz ? 'block' : 'none'}}>
                     <div className="flex flex-col space-y-4 justify-center items-center" >
                         <h1 className="text-3xl font-bold">Hey, let's play !</h1>
-                        <h2 className="text-2xl font-bold italic">Do you prefer</h2>
+                        <h2 className="text-2xl font-bold italic">do you prefer?</h2>
                         <div className="flex space-x-4 justify-center items-center">
                             <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" value={option1} onClick={nextQuestion}>{option1}</button>
                             <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" value={option2} onClick={nextQuestion}>{option2}</button>
+                            <div style={{display: firstQuest ? 'block' : 'none'}}>
+                            <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" value={option3} onClick={nextQuestion}>{option3}</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -80,44 +103,44 @@ const Quiz = ({state, onShow}) => {
                     />
                 </div>
                 <Transition appear show={showResult} as={Fragment}>
-            <Dialog as="div" className="relative z-10" 
-                onClose={resetQuiz}
-                >
-                <Transition.Child
-                    as={Fragment}
-                    enter="ease-out duration-300"
-                    enterFrom="opacity-0"
-                    enterTo="opacity-100"
-                    leave="ease-in duration-200"
-                    leaveFrom="opacity-100"
-                    leaveTo="opacity-0"
-                >
-                    <div className="fixed inset-0 bg-black bg-opacity-25" />
-                </Transition.Child>
+                    <Dialog as="div" className="relative z-10" 
+                        onClose={resetQuiz}
+                        >
+                        <Transition.Child
+                            as={Fragment}
+                            enter="ease-out duration-300"
+                            enterFrom="opacity-0"
+                            enterTo="opacity-100"
+                            leave="ease-in duration-200"
+                            leaveFrom="opacity-100"
+                            leaveTo="opacity-0"
+                        >
+                            <div className="fixed inset-0 bg-black bg-opacity-25" />
+                        </Transition.Child>
 
-                <div className="fixed inset-0 overflow-y-auto">
-                    <div className="flex min-h-full items-center justify-center p-4 text-center">
-                    <Transition.Child
-                        as={Fragment}
-                        enter="ease-out duration-300"
-                        enterFrom="opacity-0 scale-95"
-                        enterTo="opacity-100 scale-100"
-                        leave="ease-in duration-200"
-                        leaveFrom="opacity-100 scale-100"
-                        leaveTo="opacity-0 scale-95"
-                    >
-                        <Dialog.Panel className="w-full max-w-md transform overflow-hidden bg-white p-64 text-left align-middle shadow-xl transition-all">
-                            <ProjectModal 
-                        projectView={quizProj}
-                        modalQuizClicked={resetQuiz}
-                        quizEnd={showResult}
-                        />
-                        </Dialog.Panel>
-                    </Transition.Child>
-                    </div>
-                </div>
-            </Dialog>
-        </Transition>
+                        <div className="fixed inset-0 overflow-y-auto">
+                            <div className="flex min-h-full items-center justify-center p-4 text-center">
+                            <Transition.Child
+                                as={Fragment}
+                                enter="ease-out duration-300"
+                                enterFrom="opacity-0 scale-95"
+                                enterTo="opacity-100 scale-100"
+                                leave="ease-in duration-200"
+                                leaveFrom="opacity-100 scale-100"
+                                leaveTo="opacity-0 scale-95"
+                            >
+                                <Dialog.Panel className="w-full rounded max-w-md transform overflow-hidden bg-white p-64 text-left align-middle shadow-xl transition-all">
+                                    <ProjectModal 
+                                projectView={quizProj}
+                                modalQuizClicked={resetQuiz}
+                                quizEnd={showResult}
+                                />
+                                </Dialog.Panel>
+                            </Transition.Child>
+                            </div>
+                        </div>
+                    </Dialog>
+                </Transition>
             </div>
         </div>
         </>

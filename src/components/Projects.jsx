@@ -45,7 +45,7 @@ export default function Projects() {
                         leaveFrom="opacity-100 scale-100"
                         leaveTo="opacity-0 scale-95"
                     >
-                        <Dialog.Panel className="w-full max-w-md transform overflow-hidden bg-white p-64 text-left align-middle shadow-xl transition-all">
+                        <Dialog.Panel className="w-full rounded max-w-md transform overflow-hidden bg-white p-64 text-left align-middle shadow-xl transition-all">
                             <ProjectModal
                             projectView={reponse} 
                             modalClosed={()=>{

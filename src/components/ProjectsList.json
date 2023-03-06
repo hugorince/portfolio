@@ -3,23 +3,29 @@
         "id": 1,
         "name": "How Many Capitals",
         "href": "https://hugorince.github.io",
+        "tech": "HTML, CSS, JavaScript",
         "img": "images/howmanycapitals.png",
-        "img2": "images/howmanycapitals.png",
+        "img2": "images/howmanycapitals2.png",
         "img3": "images/howmanycapitals.png",
-        "img4": "images/howmanycapitals.png",
-        "description": "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        "img4": "images/howmanycapitals3.png",
+        "description": "A Quiz where you have to find the most capitals in row! There are 3 levels of difficulty. You have 3 bonuses : 50/50 that splits the number of possibilities, Shuffle again and Skip the question."
     },
     { 
         "id": 2,
         "name": "Social Animals",
         "href": "https://github.com/hugorince/Social_Animals",
+        "tech": "MAMP, Php, MySQL, PhpMyAdmin, HTML, Tailwind",
         "img": "images/socialanimals.png",
         "img2": "images/socialanimals.png",
-        "description": "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        "img3": "images/socialanimals2.png",
+        "img4": "images/socialanimals3.png",
+        "img5": "images/socialanimals4.png",
+        "description": "Social Animals is a pets' social network where pets can post their cutest pictures, like other members' posts, follow users, and event attend events!"
     },
     { 
         "id": 3,
         "name": "Climate Change in South America",
+        "tech": "HTML, CSS, JavaScript",
         "href": "https://github.com/hugorince/Global-warming-in-South-America",
         "img": "images/dataviz.png",
         "img2": "images/dataviz.png",
@@ -28,17 +34,21 @@
     { 
         "id": 4,
         "name": "Time Tracker",
+        "tech": "JavaScript",
         "href": "https://github.com/hugorince/Time-Tracker---extension_navigateur",
         "img": "images/timetracker.png",
         "img2": "images/timetracker.png",
-        "description": "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        "description": "This chrome extension is a time tracker that tracks the total time spent on each website. When activated it records your browser activity in the chrome storage API. The pop-up allows you to to browse your time spent history by date and gives you some informations about an event on this particular day."
     },
     { 
         "id": 5,
         "name": "CODEV-22",
+        "tech": "PICO-8, Lua",
         "href": "https://www.lexaloffle.com/bbs/?tid=50033",
         "img": "images/codev.png",
-        "img2": "images/codev.png",
-        "description": "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        "img2": "images/codev2.png",
+        "img3": "images/codev3.png",
+        "img4": "images/codev.png",
+        "description": "A video game created with PICO-8. Try to come back home before codev catches you!"
     }
 ]

@@ -21,10 +21,13 @@ export default function ProjectModal({modalClosed, modalQuizClicked, projectView
                                     </div>
                                     <div className="sm:flex sm:items-start">
                                         <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
+                                            <div className="flex flex-col space-y-2">
                                             <h3 className="text-2xl font-semibold leading-6 text-gray-900" id="modal-title">{projects[i].name}</h3>
-                                            <div className="mt-2 flex flex-col space-y-2">
-                                                <a href={projects[i].href} target="_blank"><p>link to project</p></a>
-                                                <p className="text-sm text-gray-500">{projects[i].description}</p>
+                                            <p className="text-xs italic text-gray-500">{projects[i].tech}</p>
+                                            </div>
+                                            <div className="mt-2 flex flex-col space-y-4">
+                                                <a href={projects[i].href} target="_blank"><p className='hover:underline hover:text-blue-500'>link to project</p></a>
+                                                <p className="text-sm text-gray-700">{projects[i].description}</p>
                                                 <img src={projects[i].img2}></img>
                                                 <img src={projects[i].img3}></img>
                                                 <img src={projects[i].img4}></img>
