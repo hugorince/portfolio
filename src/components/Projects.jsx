@@ -18,7 +18,7 @@ export default function Projects() {
         </div>
 
         <Transition appear show={projectClicked} as={Fragment}>
-            <Dialog as="div" className="relative z-10" 
+            <Dialog as="div" className="relative" 
                 onClose={
                 ()=>setProjectClicked(false)}
                 >
@@ -38,14 +38,14 @@ export default function Projects() {
                     <div className="flex min-h-full items-center justify-center p-4 text-center">
                     <Transition.Child
                         as={Fragment}
-                        enter="ease-out duration-300"
-                        enterFrom="opacity-0 scale-95"
-                        enterTo="opacity-100 scale-100"
-                        leave="ease-in duration-200"
-                        leaveFrom="opacity-100 scale-100"
+                        enter="ease-out duration-[400ms]"
+                        enterFrom="opacity-0 rotate-[-45deg] scale-50"
+                        enterTo="opacity-100 rotate-0 scale-100"
+                        leave="transform duration-200 transition ease-in-out"
+                        leaveFrom="opacity-100 rotate-0 scale-100"
                         leaveTo="opacity-0 scale-95"
                     >
-                        <Dialog.Panel className="w-full rounded max-w-md transform overflow-hidden bg-white p-64 text-left align-middle shadow-xl transition-all">
+                        <Dialog.Panel className="w-full rounded border border-zinc-800 max-w-md transform overflow-hidden bg-white p-64 text-left align-middle shadow-xl transition-all">
                             <ProjectModal
                             projectView={reponse} 
                             modalClosed={()=>{

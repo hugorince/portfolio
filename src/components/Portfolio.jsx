@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 const Portfolio = ({state, quizAgain}) => {
     return (
         <>
-        <div className="w-screen">
+        <div className="w-screen bg-zinc-100">
             <div style={{display: state ? 'block' : 'none'}}>
                 <Navbar 
                     backQuiz={quizAgain}

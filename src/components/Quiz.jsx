@@ -3,6 +3,7 @@ import React from "react";
 import QuizResult from "./QuizResult";
 import ProjectModal from "./ProjectModal";
 import { Dialog, Transition } from '@headlessui/react'
+import Background from "./Background";
 
 const question1 = ['geography', 'videogame', 'counting'];
 const question2 = ['map', 'quiz'];
@@ -77,30 +78,37 @@ const Quiz = ({state, onShow}) => {
     return (
         <>
         <div style={{display: state ? 'none' : 'block'}}>
-            <div className="h-screen flex space-y-4 flex-col justify-center items-center">
+            <div className="h-screen flex flex-col justify-center bg-zinc-100">
                 <div style={{display: showQuiz ? 'block' : 'none'}}>
-                    <div className="flex flex-col space-y-4 justify-center items-center" >
-                        <h1 className="text-3xl font-bold">Hey, let's play !</h1>
-                        <h2 className="text-2xl font-bold italic">do you prefer?</h2>
-                        <div className="flex space-x-4 justify-center items-center">
-                            <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" value={option1} onClick={nextQuestion}>{option1}</button>
-                            <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" value={option2} onClick={nextQuestion}>{option2}</button>
-                            <div style={{display: firstQuest ? 'block' : 'none'}}>
-                            <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded" value={option3} onClick={nextQuestion}>{option3}</button>
+                    <div className="relative h-screen flex space-y-4 flex-col justify-center items-center">
+                        <div className="absolute">
+                        <Background />
+                        </div>
+                        <div className="flex flex-col w-64 space-y-4 justify-center items-center absolute" >
+                            <h1 className="text-3xl font-bold text-zinc-800">Hey, let's play !</h1>
+                            <h2 className="text-2xl font-bold italic text-zinc-800">do you prefer?</h2>
+                            <div className="flex space-x-4 justify-center items-center">
+                                <button className="bg-transparent hover:bg-zinc-400 text-zinc-800 font-semibold hover:text-zinc-100 py-2 px-4 border border-zinc-800 hover:border-transparent rounded" value={option1} onClick={nextQuestion}>{option1}</button>
+                                <button className="bg-transparent hover:bg-zinc-400 text-zinc-800 font-semibold hover:text-zinc-100 py-2 px-4 border border-zinc-800 hover:border-transparent rounded" value={option2} onClick={nextQuestion}>{option2}</button>
+                                <div style={{display: firstQuest ? 'block' : 'none'}}>
+                                    <button className="bg-transparent hover:bg-zinc-400 text-zinc-800 font-semibold hover:text-zinc-100 py-2 px-4 border border-zinc-800 hover:border-transparent rounded" value={option3} onClick={nextQuestion}>{option3}</button>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div style={{display: buttonPort ? 'block' : 'none'}}>
-                    <QuizResult 
-                    quizResult={quizResult} 
-                    resetQuiz={resetQuiz} 
-                    resultView={
-                        (projectName) => {
-                            setQuizProj(projectName)
-                            setShowResult(true)
-                        }}
-                    />
+                    <div className="flex flex-col justify-center">
+                        <QuizResult 
+                        quizResult={quizResult} 
+                        resetQuiz={resetQuiz} 
+                        resultView={
+                            (projectName) => {
+                                setQuizProj(projectName)
+                                setShowResult(true)
+                            }}
+                        />
+                    </div>
                 </div>
                 <Transition appear show={showResult} as={Fragment}>
                     <Dialog as="div" className="relative z-10" 
@@ -122,8 +130,8 @@ const Quiz = ({state, onShow}) => {
                             <div className="flex min-h-full items-center justify-center p-4 text-center">
                             <Transition.Child
                                 as={Fragment}
-                                enter="ease-out duration-300"
-                                enterFrom="opacity-0 scale-95"
+                                enter="ease-out duration-[400ms]"
+                                enterFrom="opacity-0 rotate-[-120deg] scale-50"
                                 enterTo="opacity-100 scale-100"
                                 leave="ease-in duration-200"
                                 leaveFrom="opacity-100 scale-100"
