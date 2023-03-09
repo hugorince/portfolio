@@ -3,7 +3,7 @@ import ProjectModal from "./ProjectModal"
 import { Fragment, useState } from "react"
 import { Dialog, Transition } from '@headlessui/react'
 
-export default function Projects() {
+export default function Projects({modalOpen, modalClosed}) {
     const [projectClicked, setProjectClicked] = useState(false)
     const [reponse, setReponse] = useState('');
 
@@ -14,6 +14,7 @@ export default function Projects() {
                 projectClicked={(name)=>{
                     setReponse(name)
                     setProjectClicked(true)
+                    modalOpen()
                 }}/>
         </div>
 
@@ -45,11 +46,12 @@ export default function Projects() {
                         leaveFrom="opacity-100 rotate-0 scale-100"
                         leaveTo="opacity-0 scale-95"
                     >
-                        <Dialog.Panel className="w-full rounded border border-zinc-800 max-w-md transform overflow-hidden bg-white p-64 text-left align-middle shadow-xl transition-all">
+                        <Dialog.Panel className="px-44 py-80 lg:px-72 lg:py-72 w-full rounded border border-zinc-800 max-w-md transform overflow-hidden align-middle shadow-xl transition-all">
                             <ProjectModal
                             projectView={reponse} 
                             modalClosed={()=>{
                                 setProjectClicked(false)
+                                modalClosed()
                             }}/>
                         </Dialog.Panel>
                     </Transition.Child>

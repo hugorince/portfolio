@@ -4,51 +4,49 @@
         "name": "How Many Capitals",
         "href": "https://hugorince.github.io",
         "tech": "HTML, CSS, JavaScript",
+        "group": "personnal project",
         "img": "images/howmanycapitals.png",
-        "img2": "images/howmanycapitals2.png",
-        "img3": "images/howmanycapitals.png",
-        "img4": "images/howmanycapitals3.png",
-        "description": "A Quiz where you have to find the most capitals in row! There are 3 levels of difficulty. You have 3 bonuses : 50/50 that splits the number of possibilities, Shuffle again and Skip the question."
+        "img2": "images/howmanycapitals3.png, images/howmanycapitals2.png, images/howmanycapitals4.png",
+        "description": "This is a personnal project I created in december 2022 in plain JavaScript, Html and CSS. In this quiz you have to find the most capitals in row! There are 3 levels of difficulty and you have 3 bonuses : 50/50 that splits the number of possibilities, Shuffle again and Skip the question. My personnal best is 82 😉"
     },
     { 
         "id": 2,
         "name": "Social Animals",
         "href": "https://github.com/hugorince/Social_Animals",
-        "tech": "MAMP, Php, MySQL, PhpMyAdmin, HTML, Tailwind",
+        "tech": "Apache, Php, MySQL, PhpMyAdmin, HTML, Tailwind",
+        "group": "collective project",
         "img": "images/socialanimals.png",
-        "img2": "images/socialanimals.png",
-        "img3": "images/socialanimals2.png",
-        "img4": "images/socialanimals3.png",
-        "img5": "images/socialanimals4.png",
-        "description": "Social Animals is a pets' social network where pets can post their cutest pictures, like other members' posts, follow users, and event attend events!"
+        "img2": "images/socialanimals.png, images/socialanimals2.png, images/socialanimals3.png, images/socialanimals4.png, images/socialanimals5.png",
+        "description": "Social Animals is a pets' social network where pets can create their account, post their cutest pictures, like other members' posts, follow users, and even attend to events! We've created our database as the structure of the project and then used Php and its Superglobals to build this social network. The CSS was entirely build using Tailwind."
     },
     { 
         "id": 3,
         "name": "Climate Change in South America",
         "tech": "HTML, CSS, JavaScript",
         "href": "https://github.com/hugorince/Global-warming-in-South-America",
+        "group": "collective project",
         "img": "images/dataviz.png",
         "img2": "images/dataviz.png",
-        "description": "is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum."
+        "description": "This is an interactive map of South America that evolves depending on global warming. For each country the color reflects the temperature gap between today's temperature and the average temperature at the same hour of the same day in the 60's. Higher the gap is the redder the color of each country. We fetched data from Open Meteo API ans used Adobe illustrator to design the map."
     },
     { 
         "id": 4,
         "name": "Time Tracker",
         "tech": "JavaScript",
         "href": "https://github.com/hugorince/Time-Tracker---extension_navigateur",
+        "group": "collective project",
         "img": "images/timetracker.png",
-        "img2": "images/timetracker.png",
-        "description": "This chrome extension is a time tracker that tracks the total time spent on each website. When activated it records your browser activity in the chrome storage API. The pop-up allows you to to browse your time spent history by date and gives you some informations about an event on this particular day."
+        "img2": "images/timetracker2.png",
+        "description": "This chrome extension provides a time tracker that tracks the total time spent on each website. When activated it records your browser activity in the chrome storage API. Using Event listeners we where able to track the accurate time spent on each active tab. The pop-up allows you to to browse your time spent history by date and gives you some informations about an event on this particular day."
     },
     { 
         "id": 5,
         "name": "CODEV-22",
         "tech": "PICO-8, Lua",
         "href": "https://www.lexaloffle.com/bbs/?tid=50033",
+        "group": "collective project",
         "img": "images/codev.png",
-        "img2": "images/codev2.png",
-        "img3": "images/codev3.png",
-        "img4": "images/codev.png",
-        "description": "A video game created with PICO-8. Try to come back home before codev catches you!"
+        "img2": "images/codev2.png, images/codev3.png, images/codev.png",
+        "description": "A video game created with PICO-8. Try to come back home before codev catches you! Entirely coded in Lua this video-game was my first project at ada tech school."
     }
 ]

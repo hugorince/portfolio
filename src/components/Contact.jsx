@@ -4,7 +4,7 @@ export default function Contact() {
     return (
         <>
         <div id="contact" className="flex flex-col space-y-4 h-screen justify-center items-center">
-            <h1 className='text-2xl text-zinc-800'>Always a pleasure 🙃</h1>
+            <h1 className='text-2xl text-zinc-800'>always a pleasure 🙃</h1>
             <p className='text-zinc-800'>hugo.rince@gmail.com</p>
             <p className='text-zinc-800'>06.88.38.65.87</p>
             <div className="flex space-x-4">
