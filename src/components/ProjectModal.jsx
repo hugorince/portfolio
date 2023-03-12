@@ -1,3 +1,5 @@
+import QuizButtons from './QuizButtons';
+
 export default function ProjectModal({modalClosed, modalQuizClicked, projectView, quizEnd}) {
     const projects = require('./ProjectsList.json');
 
@@ -14,11 +16,7 @@ export default function ProjectModal({modalClosed, modalQuizClicked, projectView
                             </button>
                         </div>
                         <div style={{display: quizEnd ? 'block' : 'none'}}>
-                            <div className="">
-                            <button type="button" onClick={modalQuizClicked} className="bg-transparent hover:bg-zinc-400 text-zinc-800 border border-zinc-800 font-semibold hover:text-zinc-100 py-2 px-4 rounded" data-modal-hide="defaultModal">
-                            Go to portfolio
-                            </button>
-                            </div>
+                            <QuizButtons buttonAction={modalQuizClicked} content={'Go to Portfolio'} speedAnim={0.5}/>
                         </div>
                         <div className="sm:flex sm:items-start">
                             <div className="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
@@ -27,7 +25,7 @@ export default function ProjectModal({modalClosed, modalQuizClicked, projectView
                                     <p className="text-xs text-zinc-600">{projects[i].group} ({projects[i].tech})</p>
                                 </div>
                                 <div className="mt-2 flex flex-col space-y-4">
-                                    <a href={projects[i].href} target="_blank"><p className='font-semibold text-zinc-600 hover:text-zinc-400'>link to project</p></a>
+                                    <p className='font-semibold text-zinc-600'><a className='hover:text-zinc-400' href={projects[i].href} target="_blank">link to project</a></p>
                                     <p className="text-sm text-gray-700">{projects[i].description}</p>
                                     {images.map(image=>
                                         <img src={image} key={image} className="border border-zinc-800"></img>)}

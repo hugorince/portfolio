@@ -1,9 +1,11 @@
-import { Fragment, useState } from "react";
+import { useState } from "react";
 import React from "react";
 import QuizResult from "./QuizResult";
-import ProjectModal from "./ProjectModal";
-import { Dialog, Transition } from '@headlessui/react'
 import Background from "./Background";
+import { motion } from "framer-motion";
+import QuizButtons from "./QuizButtons";
+import ModalQuiz from "./ModalQuiz";
+
 
 const question1 = ['geography', 'videogame', 'counting'];
 const question2 = ['map', 'quiz'];
@@ -87,13 +89,15 @@ const Quiz = ({state, onShow}) => {
                         <div className="flex flex-col w-64 space-y-4 justify-center items-center absolute" >
                             <h1 className="text-3xl font-bold text-zinc-800">Hey, let's play !</h1>
                             <h2 className="text-2xl font-bold italic text-zinc-800">do you prefer?</h2>
-                            <div className="flex space-x-4 justify-center items-center">
-                                <button className="bg-transparent hover:bg-zinc-400 text-zinc-800 font-semibold hover:text-zinc-100 py-2 px-4 border border-zinc-800 rounded" value={option1} onClick={nextQuestion}>{option1}</button>
-                                <button className="bg-transparent hover:bg-zinc-400 text-zinc-800 font-semibold hover:text-zinc-100 py-2 px-4 border border-zinc-800 rounded" value={option2} onClick={nextQuestion}>{option2}</button>
+                                <motion.div className="flex space-x-4 justify-center items-center"
+                                whileTap={{ opacity: [1, 0], scale: [1, 1.1, 1]}}
+                                >
+                                <QuizButtons content={option1} buttonAction={nextQuestion} speedAnim={0.5}/>
+                                <QuizButtons content={option2} buttonAction={nextQuestion} speedAnim={0.6}/>
                                 <div style={{display: firstQuest ? 'block' : 'none'}}>
-                                    <button className="bg-transparent hover:bg-zinc-400 text-zinc-800 font-semibold hover:text-zinc-100 py-2 px-4 border border-zinc-800 rounded" value={option3} onClick={nextQuestion}>{option3}</button>
+                                <QuizButtons content={option3} buttonAction={nextQuestion} speedAnim={0.7}/>
                                 </div>
-                            </div>
+                                </motion.div>
                         </div>
                     </div>
                 </div>
@@ -110,45 +114,7 @@ const Quiz = ({state, onShow}) => {
                         />
                     </div>
                 </div>
-                <Transition appear show={showResult} as={Fragment}>
-                    <Dialog as="div" className="relative z-10" 
-                        onClose={resetQuiz}
-                        >
-                        <Transition.Child
-                            as={Fragment}
-                            enter="ease-out duration-300"
-                            enterFrom="opacity-0"
-                            enterTo="opacity-100"
-                            leave="ease-in duration-200"
-                            leaveFrom="opacity-100"
-                            leaveTo="opacity-0"
-                        >
-                            <div className="fixed inset-0 bg-black bg-opacity-25" />
-                        </Transition.Child>
-
-                        <div className="fixed inset-0 overflow-y-auto">
-                            <div className="flex min-h-full items-center justify-center p-4 text-center">
-                            <Transition.Child
-                                as={Fragment}
-                                enter="ease-out duration-[400ms]"
-                                enterFrom="opacity-0 rotate-[-120deg] scale-50"
-                                enterTo="opacity-100 scale-100"
-                                leave="ease-in duration-200"
-                                leaveFrom="opacity-100 scale-100"
-                                leaveTo="opacity-0 scale-95"
-                            >
-                                <Dialog.Panel className="px-48 py-80 lg:px-72 lg:py-72 w-full rounded border border-zinc-800 max-w-md transform overflow-hidden align-middle shadow-xl transition-all">
-                                    <ProjectModal 
-                                projectView={quizProj}
-                                modalQuizClicked={resetQuiz}
-                                quizEnd={showResult}
-                                />
-                                </Dialog.Panel>
-                            </Transition.Child>
-                            </div>
-                        </div>
-                    </Dialog>
-                </Transition>
+                <ModalQuiz reset={resetQuiz} projectViewed={quizProj} res={showResult}/>
             </div>
         </div>
         </>

@@ -1,4 +1,4 @@
-import { Icon } from '@iconify/react';
+import TechLogos from './TechLogos';
 
 export default function Home(){
     return (
@@ -16,27 +16,7 @@ export default function Home(){
                 <div className='flex flex-col space-y-2'>
                     <p></p>
                     <div className='flex space-x-4'>
-                        <div className='grayscale hover:scale-105 hover:grayscale-0'>
-                        <Icon icon="logos:react" width="30"/>
-                        </div>
-                        <div className='grayscale hover:scale-105 hover:grayscale-0'>
-                        <Icon icon="logos:python" width="30"/>
-                        </div>
-                        <div className='grayscale hover:scale-110 hover:grayscale-0'>
-                        <Icon icon="vscode-icons:file-type-php2" width="30"/>
-                        </div>
-                        <div className='grayscale hover:scale-105 hover:grayscale-0'>
-                        <Icon icon="logos:mysql" width="30"/>
-                        </div>
-                        <div className='grayscale hover:scale-105 hover:grayscale-0'>
-                        <Icon icon="logos:javascript" width="30"/>
-                        </div>
-                        <div className='grayscale hover:scale-105 hover:grayscale-0'>
-                        <Icon icon="simple-icons:phpmyadmin" width="30"/>
-                        </div>
-                        <div className='grayscale hover:scale-105 hover:grayscale-0'>
-                        <Icon icon="logos:apache" height="30"/>
-                        </div>
+                        <TechLogos />
                     </div>
                 </div>
                 

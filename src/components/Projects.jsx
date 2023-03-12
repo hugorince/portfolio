@@ -2,13 +2,24 @@ import ProjectsItems from "./ProjectsItems"
 import ProjectModal from "./ProjectModal"
 import { Fragment, useState } from "react"
 import { Dialog, Transition } from '@headlessui/react'
+import { Parallax } from "react-scroll-parallax"
+import { useMediaQuery} from "react-responsive";
 
 export default function Projects({modalOpen, modalClosed}) {
     const [projectClicked, setProjectClicked] = useState(false)
     const [reponse, setReponse] = useState('');
+    
+    const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+
 
     return (
         <>
+        <Parallax 
+        translateY={['-100px', '200px']} 
+        speed={10} 
+        disabled={isMobile} 
+        scale={[1, 1.2]}
+        >
         <div id="projects" className="flex flex-col space-y-8 h-screen justify-center items-center">
                 <ProjectsItems 
                 projectClicked={(name)=>{
@@ -17,6 +28,7 @@ export default function Projects({modalOpen, modalClosed}) {
                     modalOpen()
                 }}/>
         </div>
+        </Parallax >
 
         <Transition appear show={projectClicked} as={Fragment}>
             <Dialog as="div" className="relative" 

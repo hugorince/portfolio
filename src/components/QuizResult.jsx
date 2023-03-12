@@ -1,4 +1,5 @@
 import Background from './Background';
+import QuizButtons from './QuizButtons';
 
 export default function QuizResult({quizResult, resetQuiz, resultView}) {
     const projects = require('./ProjectsList.json');
@@ -29,7 +30,8 @@ export default function QuizResult({quizResult, resetQuiz, resultView}) {
                                     </div>
                                 </div>
                                 <div className='flex items-center justify-center mt-8'>
-                                    <button className="bg-transparent hover:bg-zinc-400 text-zinc-800 font-semibold hover:text-zinc-100 py-2 px-4 border border-zinc-800 rounded" onClick={resetQuiz}>Skip to portfolio</button>
+                                    
+                                    <QuizButtons buttonAction={resetQuiz} content={'Skip to portfolio'} speedAnim={0.7}/>
                                 </div>
                             </div> 
                         </div>
