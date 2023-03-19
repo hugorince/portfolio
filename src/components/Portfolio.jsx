@@ -16,19 +16,27 @@ const Portfolio = ({state, quizAgain}) => {
         
         <div className="w-screen bg-zinc-100">
             <div style={{display: state ? 'block' : 'none'}}>
-                <div className="flex flex-col sm: space-y-20">
+                <div className="flex flex-col sm:space-y-20">
                 <div style={{display: modalUp ? 'none' : 'block'}}>
                 <Navbar 
                     backQuiz={quizAgain}
                 />
                 </div>
                 <Parallax speed={10}>
-                <Home  />
-                <Projects 
-                modalOpen={()=>setModalUp(true)} 
-                modalClosed={()=>setModalUp(false)}
-                />
-                <Contact />
+                <div className="flex flex-col justify-center items-center">
+                    <div className="w-10/12">
+                    <Home  />
+                    </div>
+                    <div className="w-10/12">
+                    <Projects 
+                    modalOpen={()=>setModalUp(true)} 
+                    modalClosed={()=>setModalUp(false)}
+                    />
+                    </div>
+                    <div className="w-10/12">
+                    <Contact />
+                    </div>
+                </div>
                 </Parallax>
                 </div>
             </div>

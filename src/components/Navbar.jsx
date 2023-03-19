@@ -1,14 +1,17 @@
+import { Icon } from "@iconify/react";
+
 const Navbar = ({backQuiz}) => {
     
     return (
     <>
-    <div className="fixed top-0 z-10">
+    <div className="fixed top-0 z-10 pt-8 px-8">
         <nav>
-            <ul className="bg-zinc-100 h-16 flex space-x-8 w-screen justify-center items-center">
-                <li className="lg:text-2xl text-zinc-800 hover:text-zinc-400 hover:scale-110"><a href="#home" >HOME</a></li>
-                <li className="lg:text-2xl text-zinc-800 hover:text-zinc-400 hover:scale-110"><a href="#projects" >PROJECTS</a></li>
-                <li className="lg:text-2xl text-zinc-800 hover:text-zinc-400 hover:scale-110"><a href="#contact" >CONTACT</a></li>
-                <button className="lg:text-2xl text-zinc-800 hover:text-zinc-400 hover:scale-110" onClick={backQuiz}>QUIZ</button>
+            <ul className="bg-zinc-100 flex flex-col space-y-2">
+                <li className="lg:text-xl text-zinc-800 hover:text-zinc-400"><a href="#home" scroll={false} className="hover:scale-110" ><Icon icon="mdi:arrow-top-thick"/></a></li>
+                <li className="lg:text-xl text-zinc-800 hover:text-zinc-400 hover:scale-110"><a href="#projects" className="scroll-smooth" >PROJECTS</a></li>
+                <li className="lg:text-xl text-zinc-800 hover:text-zinc-400 hover:scale-110"><a href="#contact" >CONTACT</a></li>
+                <li><button className="lg:text-xl text-zinc-800 hover:text-zinc-400 hover:scale-110" onClick={backQuiz}>QUIZ</button></li>
+                
             </ul>
         </nav>
     </div>   
