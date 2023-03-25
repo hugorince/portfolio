@@ -14,13 +14,14 @@ export default function Projects({modalOpen, modalClosed}) {
 
     return (
         <>
+        <div className="h-screen">
         <Parallax 
         translateY={['-100px', '200px']} 
         speed={10} 
         disabled={isMobile} 
         scale={[1, 1.2]}
         >
-        <div id="projects" className="flex flex-col space-y-8 h-screen justify-center items-center">
+        <div id="projects" className="flex flex-col space-y-8 justify-center items-center">
                 <ProjectsItems 
                 projectClicked={(name)=>{
                     setReponse(name)
@@ -71,6 +72,7 @@ export default function Projects({modalOpen, modalClosed}) {
                 </div>
             </Dialog>
         </Transition>
+        </div>
         </>
     )
 };

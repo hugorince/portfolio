@@ -9,8 +9,6 @@ const Portfolio = ({state, quizAgain}) => {
 
     const [modalUp, setModalUp] = useState(false)
 
-    
-
     return (
         <>
         
