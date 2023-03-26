@@ -89,14 +89,16 @@ const Quiz = ({state, onShow}) => {
                         <div className="flex flex-col w-64 space-y-4 justify-center items-center absolute" >
                             <h1 className="text-3xl font-bold text-zinc-800">Hey, let's play !</h1>
                             <h2 className="text-2xl font-bold italic text-zinc-800">do you prefer?</h2>
-                                <motion.div className="flex space-x-4 justify-center items-center"
+                                <motion.div className="flex flex-col space-y-4 sm:space-x-4 sm:flex-row justify-center items-center"
                                 whileTap={{ opacity: [1, 0], scale: [1, 1.1, 1]}}
                                 >
-                                <QuizButtons content={option1} buttonAction={nextQuestion} speedAnim={0.5}/>
-                                <QuizButtons content={option2} buttonAction={nextQuestion} speedAnim={0.6}/>
-                                <div style={{display: firstQuest ? 'block' : 'none'}}>
-                                <QuizButtons content={option3} buttonAction={nextQuestion} speedAnim={0.7}/>
-                                </div>
+                                    <div className="sm:pt-4">
+                                    <QuizButtons content={option1} buttonAction={nextQuestion} speedAnim={0.5}/>
+                                    </div>
+                                    <QuizButtons content={option2} buttonAction={nextQuestion} speedAnim={0.6}/>
+                                    <div style={{display: firstQuest ? 'block' : 'none'}}>
+                                    <QuizButtons content={option3} buttonAction={nextQuestion} speedAnim={0.7}/>
+                                    </div>
                                 </motion.div>
                         </div>
                     </div>

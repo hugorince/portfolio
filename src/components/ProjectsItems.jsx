@@ -27,11 +27,11 @@ export default function ProjectsItems({projectClicked}){
       });
         return (
         <>
-        <div className='h-screen'>
+        
         <div id="project-line" className="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
             {projs}
         </div>
-        </div>
+        
         </>
     )
 }

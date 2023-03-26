@@ -39,6 +39,16 @@
         "img2": "images/timetracker2.png",
         "description": "This chrome extension provides a time tracker that tracks the total time spent on each website. When activated it records your browser activity in the chrome storage API. Using Event listeners we where able to track the accurate time spent on each active tab. The pop-up allows you to to browse your time spent history by date and gives you some informations about an event on this particular day."
     },
+    {
+    "id": 5,
+    "name": "CODEV-22",
+    "tech": "PICO-8, Lua",
+    "href": "https://www.lexaloffle.com/bbs/?tid=50033",
+    "group": "collective project",
+    "img": "images/codev.png",
+    "img2": "images/codev2.png, images/codev3.png, images/codev.png",
+    "description": "A video game created with PICO-8. Try to come back home before codev catches you! Entirely coded in Lua this video-game was my first project at ada tech school."
+    },
     { 
         "id": 6,
         "name": "How Many Cities",

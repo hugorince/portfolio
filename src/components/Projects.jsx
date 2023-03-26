@@ -5,31 +5,29 @@ import { Dialog, Transition } from '@headlessui/react'
 import { Parallax } from "react-scroll-parallax"
 import { useMediaQuery} from "react-responsive";
 
-export default function Projects({modalOpen, modalClosed}) {
+export default function Projects({modalOpen, modalClosed, isMobile}) {
     const [projectClicked, setProjectClicked] = useState(false)
     const [reponse, setReponse] = useState('');
     
-    const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
-
 
     return (
         <>
-        <div className="h-screen">
-        <Parallax 
-        translateY={['-100px', '200px']} 
-        speed={10} 
-        disabled={isMobile} 
-        scale={[1, 1.2]}
-        >
-        <div id="projects" className="flex flex-col space-y-8 justify-center items-center">
-                <ProjectsItems 
-                projectClicked={(name)=>{
-                    setReponse(name)
-                    setProjectClicked(true)
-                    modalOpen()
-                }}/>
-        </div>
-        </Parallax >
+        <div  className="">
+            <Parallax 
+            translateY={['-150px', '200px']} 
+            speed={10} 
+            disabled={isMobile} 
+            scale={[1, 1.2]}
+            >
+                <div id="projects" className="flex space-y-8 justify-center items-center pb-24">
+                        <ProjectsItems 
+                        projectClicked={(name)=>{
+                            setReponse(name)
+                            setProjectClicked(true)
+                            modalOpen()
+                        }}/>
+                </div>
+            </Parallax >
 
         <Transition appear show={projectClicked} as={Fragment}>
             <Dialog as="div" className="relative" 
