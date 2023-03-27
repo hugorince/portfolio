@@ -2,7 +2,7 @@
     { 
         "id": 1,
         "name": "How Many Capitals",
-        "href": "https://hugorince.github.io",
+        "href": "https://github.com/hugorince/HowManyCapitals",
         "tech": "HTML, CSS, JavaScript",
         "group": "personnal project",
         "img": "images/howmanycapitals.png",
@@ -10,9 +10,9 @@
         "description": "This is a personnal project I created in december 2022 in plain JavaScript, Html and CSS. In this quiz you have to find the most capitals in row! There are 3 levels of difficulty and you have 3 bonuses : 50/50 that splits the number of possibilities, Shuffle again and Skip the question. My personnal best is 82 😉"
     },
     { 
-        "id": 7,
+        "id": 2,
         "name": "Vinma",
-        "href": "https://github.com/hugorince/Social_Animals",
+        "href": "https://github.com/adatechschool/projet_collectif_vente_de_meubles_back-team_vinma",
         "tech": "React, Node, Express, MongoDB, Tailwind",
         "group": "collective project",
         "img": "images/vinma1.png",
@@ -30,7 +30,7 @@
         "description": "This is an interactive map of South America that evolves depending on global warming. For each country the color reflects the temperature gap between today's temperature and the average temperature at the same hour of the same day in the 60's. Higher the gap is the redder the color of each country. We fetched data from Open Meteo API ans used Adobe illustrator to design the map."
     },
     { 
-        "id": 2,
+        "id": 4,
         "name": "Social Animals",
         "href": "https://github.com/hugorince/Social_Animals",
         "tech": "Apache, Php, MySQL, PhpMyAdmin, HTML, Tailwind",
@@ -40,7 +40,7 @@
         "description": "Social Animals is a pets' social network where pets can create their account, post their cutest pictures, like other members' posts, follow users, and even attend to events! We've created our database as the structure of the project and then used Php and its Superglobals to build this social network. The CSS was entirely build using Tailwind."
     },
     { 
-        "id": 6,
+        "id": 5,
         "name": "How Many Cities",
         "tech": "React, Tailwind",
         "href": "https://github.com/hugorince/citiy_names",
@@ -50,7 +50,7 @@
         "description": "Enter the name of a city in the searchbar, then see on the map how many cities in the world have the exact same name."
     },
     { 
-        "id": 4,
+        "id": 6,
         "name": "Time Tracker",
         "tech": "JavaScript",
         "href": "https://github.com/hugorince/Time-Tracker---extension_navigateur",
@@ -60,7 +60,7 @@
         "description": "This chrome extension provides a time tracker that tracks the total time spent on each website. When activated it records your browser activity in the chrome storage API. Using Event listeners we where able to track the accurate time spent on each active tab. The pop-up allows you to to browse your time spent history by date and gives you some informations about an event on this particular day."
     },
     {
-        "id": 5,
+        "id": 7,
         "name": "CODEV-22",
         "tech": "PICO-8, Lua",
         "href": "https://www.lexaloffle.com/bbs/?tid=50033",
