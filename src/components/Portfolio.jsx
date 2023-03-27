@@ -13,9 +13,9 @@ const Portfolio = ({state, quizAgain}) => {
     return (
         <>
         
-        <div className="w-screen bg-zinc-100">
+        <div className="w-screen  bg-zinc-100">
             <div style={{display: state ? 'block' : 'none'}}>
-                <div className="bg-zinc-100">
+                <div className="bg-zinc-100 ">
                     <div style={{display: modalUp ? 'none' : 'block'}}>
                         <Navbar 
                             quizAgain={quizAgain}

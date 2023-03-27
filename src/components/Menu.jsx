@@ -1,11 +1,17 @@
 import { Icon } from "@iconify/react";
+import { motion } from 'framer-motion'
 export default function Menu({quizAgain}) {
     return (
         <>
         <div className="z-10 fixed bg-zinc-100 w-screen py-4 sm:bg-transparent sm:px-4">
      <nav>
          <ul className="flex space-x-4 justify-center sm:space-x-0 sm:flex-col sm:space-y-2">
-             <li className="text-zinc-800 hover:text-zinc-400 lg:text-xl "><a href="#home" ><Icon icon="mdi:arrow-top-thick"/></a></li>
+             <li className="text-zinc-800 hover:text-zinc-400 lg:text-xl "><a href="#home" >
+                <motion.div 
+                className="dev">
+                <Icon icon="mdi:arrow-top-thick"/>
+                </motion.div>
+                </a></li>
              <li><a href="#projects"><button className="lg:text-xl text-zinc-800 hover:text-zinc-400 hover:scale-105">PROJECTS</button></a></li>
              <li><button className="lg:text-xl text-zinc-800 hover:text-zinc-400 hover:scale-105" onClick={quizAgain}>QUIZ</button></li>
              <div className="flex space-x-2  ">

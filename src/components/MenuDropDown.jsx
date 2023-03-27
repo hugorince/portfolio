@@ -20,7 +20,8 @@ export default function MenuDropDown({quizAgain}){
                     class="z-10 fixed ">
                         <nav className="bg-zinc-100 h-64 w-screen border border-black">
                             <button onClick={handleClick} className="py-4 px-4">
-                                <Icon icon="akar-icons:three-line-horizontal" width="30"/>
+                            <Icon icon="ion:close" width="30" />
+
                             </button>
                                 <div>
                                     <ul className="flex justify-center flex-col space-y-6 w-screen px-4">

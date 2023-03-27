@@ -7,73 +7,88 @@ import QuizButtons from "./QuizButtons";
 import ModalQuiz from "./ModalQuiz";
 
 
-const question1 = ['geography', 'videogame', 'counting'];
-const question2 = ['map', 'quiz'];
+const question1 = ['geography', 'videogames', 'sociability'];
+const question2 = ['map', 'quiz', 'names'];
 const question3 = ['quiz', 'retro'];
-const question4 = ['animals', 'time'];
+const question4 = ['pets', 'furnitures'];
 
 const Quiz = ({state, onShow}) => {
-    const [option1, setOption1] = useState(question1[0])
-    const [option2, setOption2] = useState(question1[1])
-    const [option3, setOption3] = useState(question1[2])
-    const [firstQuest, setFirstQuest] = useState(true)
-    const [showQuiz, setShowQuiz] = useState(true)
-    const [quizResult, setQuizResult] = useState('')
-    const [buttonPort, setButtonPort] = useState(false)
-    const [quizProj, setQuizProj] = useState('')
-    const [showResult, setShowResult] = useState(false)
+    const [option1, setOption1] = useState(question1[0]);
+    const [option2, setOption2] = useState(question1[1]);
+    const [option3, setOption3] = useState(question1[2]);
+    const [firstQuest, setFirstQuest] = useState(true);
+    const [showQuiz, setShowQuiz] = useState(true);
+    const [quizResult, setQuizResult] = useState('');
+    const [buttonPort, setButtonPort] = useState(false);
+    const [quizProj, setQuizProj] = useState('');
+    const [showResult, setShowResult] = useState(false);
 
     const resetQuiz = () => {
-        setOption1(question1[0])
-        setOption2(question1[1])
-        setShowQuiz(true)
-        setQuizResult('')
-        setButtonPort(false)
-        onShow()
-        setQuizProj('')
-        setShowResult(false)
-        setFirstQuest(true)
+        setOption1(question1[0]);
+        setOption2(question1[1]);
+        setOption3(question1[2]);
+        setShowQuiz(true);
+        setQuizResult('');
+        setButtonPort(false);
+        onShow();
+        setQuizProj('');
+        setShowResult(false);
+        setFirstQuest(true);
     }
 
     const nextQuestion = (event) => {
 
-        setFirstQuest(false)
+        
         if (event.target.value === 'geography'){
-            setOption1(question2[0])
-            setOption2(question2[1])
+            setOption1(question2[0]);
+            setOption2(question2[1]);
+            setOption3(question2[2]);
         }
-        else if (event.target.value === 'videogame'){
-            setOption1(question3[0])
-            setOption2(question3[1])
+        else if (event.target.value === 'videogames'){
+            setFirstQuest(false);
+            setOption1(question3[0]);
+            setOption2(question3[1]);
         }
-        else if (event.target.value === 'counting'){
-            setOption1(question4[0])
-            setOption2(question4[1])
+        else if (event.target.value === 'sociability'){
+            setFirstQuest(false);
+            setOption1(question4[0]);
+            setOption2(question4[1]);
         }
         else if (event.target.value === 'quiz'){
-            setShowQuiz(false)
-            setButtonPort(true)
-            setQuizResult('How Many Capitals')
+            setFirstQuest(false);
+            setShowQuiz(false);
+            setButtonPort(true);
+            setQuizResult('How Many Capitals');
         }
         else if (event.target.value === 'map'){
-            setShowQuiz(false)
-            setButtonPort(true)
-            setQuizResult('Climate Change in South America')
+            setFirstQuest(false);
+            setShowQuiz(false);
+            setButtonPort(true);
+            setQuizResult('Climate Change in South America');
         }
         else if (event.target.value === 'retro'){
-            setShowQuiz(false)
-            setButtonPort(true)
-            setQuizResult('CODEV-22')
+            setFirstQuest(false);
+            setShowQuiz(false);
+            setButtonPort(true);
+            setQuizResult('CODEV-22');
         }
-        else if (event.target.value === 'time'){
-            setShowQuiz(false)
-            setButtonPort(true)
-            setQuizResult('Time Tracker')
+        else if (event.target.value === 'furnitures'){
+            setFirstQuest(false);
+            setShowQuiz(false);
+            setButtonPort(true);
+            setQuizResult('Vinma');
         }
-        else if (event.target.value === 'animals'){
-            setShowQuiz(false)
-            setButtonPort(true)
-            setQuizResult('Social Animals')
+        else if (event.target.value === 'pets'){
+            setFirstQuest(false);
+            setShowQuiz(false);
+            setButtonPort(true);
+            setQuizResult('Social Animals');
+        }
+        else if (event.target.value === 'names'){
+            setFirstQuest(false);
+            setShowQuiz(false);
+            setButtonPort(true);
+            setQuizResult('How Many Cities');
         }
     }
 
