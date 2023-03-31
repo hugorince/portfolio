@@ -12,7 +12,7 @@ const question2 = ['map', 'quiz', 'names'];
 const question3 = ['quiz', 'retro'];
 const question4 = ['pets', 'furnitures'];
 
-const Quiz = ({state, onShow}) => {
+const Quiz = ({state, onShow, isMobile}) => {
     const [option1, setOption1] = useState(question1[0]);
     const [option2, setOption2] = useState(question1[1]);
     const [option3, setOption3] = useState(question1[2]);
@@ -128,6 +128,7 @@ const Quiz = ({state, onShow}) => {
                                 setQuizProj(projectName)
                                 setShowResult(true)
                             }}
+                        isMobile={isMobile}
                         />
                     </div>
                 </div>

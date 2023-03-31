@@ -32,7 +32,7 @@ export default function ModalQuiz({reset, projectViewed, res}) {
                                 leaveFrom="opacity-100 scale-100"
                                 leaveTo="opacity-0 scale-95"
                             >
-                                <Dialog.Panel className="px-48 py-80 lg:px-72 lg:py-72 w-full rounded border border-zinc-800 max-w-md transform overflow-hidden align-middle shadow-xl transition-all">
+                                <Dialog.Panel className="px-46 py-80 lg:px-72 lg:py-72 w-full rounded border border-zinc-800 max-w-md transform overflow-hidden align-middle shadow-xl transition-all">
                                     <ProjectModal 
                                 projectView={projectViewed}
                                 modalQuizClicked={reset}

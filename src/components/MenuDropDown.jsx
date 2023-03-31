@@ -25,19 +25,19 @@ export default function MenuDropDown({quizAgain}){
                             </button>
                                 <div>
                                     <ul className="flex justify-center flex-col space-y-6 w-screen px-4">
-                                        <li><a href="#projects"><button className="text-2xl text-zinc-800 hover:text-zinc-400 hover:scale-105" onClick={handleClick}>PROJECTS</button></a></li>
-                                        <li><button className="text-2xl text-zinc-800 hover:text-zinc-400 hover:scale-105" onClick={()=>{
+                                        <li><a href="#projects"><button className="text-2xl text-zinc-800" onClick={handleClick}>PROJECTS</button></a></li>
+                                        <li><button className="text-2xl text-zinc-800" onClick={()=>{
                                             quizAgain()
                                             handleClick()}}>QUIZ</button></li>
                                         <div className="flex space-x-4 ">
-                                            <button onClick={handleClick}><a className=" opacity-60 hover:opacity-100 hover:scale-110 cursor-pointer" href="https://github.com/hugorince" target="_blank">
+                                            <button onClick={handleClick}><a className=" opacity-80 cursor-pointer" href="https://github.com/hugorince" target="_blank">
                                             <Icon icon="radix-icons:github-logo" width='30'/>
                                             </a></button>
-                                            <button onClick={handleClick}><a className=" opacity-60 hover:opacity-100 hover:scale-110 cursor-pointer" href="https://www.linkedin.com/in/hugorince/" target="_blank" >
+                                            <button onClick={handleClick}><a className="opacity-80 cursor-pointer" href="https://www.linkedin.com/in/hugorince/" target="_blank" >
                                             <Icon icon="radix-icons:linkedin-logo" width='30'/>
                                             </a></button>
                                             <button onClick={handleClick}>
-                                            <a className=" opacity-60 hover:opacity-100 hover:scale-110 cursor-pointer" href="https://www.codewars.com/users/hugorince" target="_blank">
+                                            <a className="opacity-80 cursor-pointer" href="https://www.codewars.com/users/hugorince" target="_blank">
                                             <Icon icon="simple-icons:codewars" width='30'/>
                                             </a></button>
                                         </div>

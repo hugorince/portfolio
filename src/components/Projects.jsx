@@ -22,6 +22,7 @@ export default function Projects({modalOpen, modalClosed, isMobile}) {
             >
                 <div id="projects" className="flex space-y-8 justify-center items-center pb-24">
                         <ProjectsItems 
+                        isMobile={isMobile}
                         projectClicked={(name)=>{
                             setReponse(name)
                             setProjectClicked(true)

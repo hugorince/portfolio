@@ -17,7 +17,7 @@
         "group": "collective project",
         "img": "images/vinma1.png",
         "img2": "images/vinma2.png, images/vinma3.png, images/vinma4.png, images/vinma5.png, images/vinma6.png",
-        "description": "Vinma is a plateform for buying and selling seconhand items, mainly furnitures. You can create an account, browse items by category, add them to your basket and create posts to sell your own items. This is a full-stack projet made with Node, Express and MongoDB for the back-end and React and Tailwind for the front-end."
+        "description": "Vinma is a platform for buying and selling seconhand items, mainly furnitures. You can create an account, browse items by category, add them to your basket and create posts to sell your own items. This is a full-stack projet made with Node, Express and MongoDB for the back-end and React and Tailwind for the front-end."
     },
     { 
         "id": 3,

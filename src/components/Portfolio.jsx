@@ -3,12 +3,12 @@ import Home from "./Home";
 import Navbar from "./Navbar";
 import { useState } from "react";
 import { Parallax } from "react-scroll-parallax";
-import { useMediaQuery } from "react-responsive";
 
-const Portfolio = ({state, quizAgain}) => {
+
+const Portfolio = ({state, quizAgain, isMobile}) => {
 
     const [modalUp, setModalUp] = useState(false);
-    const isMobile = useMediaQuery({ query: "(max-width: 640px)" });
+    
 
     return (
         <>
@@ -23,7 +23,7 @@ const Portfolio = ({state, quizAgain}) => {
                         />
                     </div>
                     <Parallax speed={10} disabled={isMobile} >
-                        <div className="flex flex-col justify-center items-center lg:space-y-48">
+                        <div className="flex flex-col justify-center items-center space-y-16 sm:space-y-48">
                             <div className="w-10/12" id="home">
                             <Home  />
                             </div>

@@ -3,9 +3,9 @@ import { motion } from 'framer-motion'
 export default function Menu({quizAgain}) {
     return (
         <>
-        <div className="z-10 fixed bg-zinc-100 w-screen py-4 sm:bg-transparent sm:px-4">
+        <div className="z-10 fixed bg-zinc-100 w-screen py-4 sm:w-36 sm:bg-transparent sm:px-4">
      <nav>
-         <ul className="flex space-x-4 justify-center sm:space-x-0 sm:flex-col sm:space-y-2">
+         <ul className="flex space-x-4 justify-center  sm:space-x-0 sm:flex-col sm:space-y-2">
              <li className="text-zinc-800 hover:text-zinc-400 lg:text-xl "><a href="#home" >
                 <motion.div 
                 className="dev">
