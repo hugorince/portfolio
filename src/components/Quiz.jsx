@@ -111,9 +111,7 @@ const Quiz = ({state, onShow, isMobile}) => {
                             timing="ease"
                             iteration="1"
                             fillMode="none"
-                            >
-                                Hey, let's play !
-                            </MovingText>
+                            >Hey, let's play !</MovingText>
                             <motion.div 
                             key={'prefer'}
                             animate={{ opacity: [0, 1]}}

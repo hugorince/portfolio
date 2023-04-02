@@ -20,10 +20,9 @@ export default function QuizResult({quizResult, resetQuiz, resultView, isMobile}
                                 >
                                     <MovingText
                                     type="bounce"
-                                    duration="800ms"
+                                    duration="1000ms"
                                     delay="0s"
                                     direction="normal"
-                                    
                                     iteration="1"
                                     fillMode="none"
                                     className="text-2xl text-zinc-800">
