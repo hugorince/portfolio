@@ -3,7 +3,7 @@ import TechLogos from './TechLogos';
 export default function Home(){
     return (
         <>
-        <div className="flex flex-col justify-center items-center pt-24 sm:pt-0 h-screen">
+        <div className="flex flex-col justify-center items-center pt-24 pb-24 sm:pb-0 sm:pt-0 h-screen">
             <div className="flex flex-col space-y-2 w-10/12 sm:w-7/12">
                 <div>
                     <div className="animate-bounce">👋</div>

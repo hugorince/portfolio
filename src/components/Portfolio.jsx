@@ -13,7 +13,7 @@ const Portfolio = ({state, quizAgain, isMobile}) => {
     return (
         <>
         
-        <div className="w-screen  bg-zinc-100">
+        <div className="w-screen bg-zinc-100">
             <div style={{display: state ? 'block' : 'none'}}>
                 <div className="bg-zinc-100 ">
                     <div style={{display: modalUp ? 'none' : 'block'}}>
@@ -25,14 +25,14 @@ const Portfolio = ({state, quizAgain, isMobile}) => {
                     <Parallax speed={10} disabled={isMobile} >
                         <div className="flex flex-col justify-center items-center space-y-16 sm:space-y-48">
                             <div className="w-10/12" id="home">
-                            <Home  />
+                                <Home  />
                             </div>
                             <div className="w-10/12">
-                            <Projects 
-                            modalOpen={()=>setModalUp(true)} 
-                            modalClosed={()=>setModalUp(false)}
-                            isMobile={isMobile}
-                            />
+                                <Projects 
+                                modalOpen={()=>setModalUp(true)} 
+                                modalClosed={()=>setModalUp(false)}
+                                isMobile={isMobile}
+                                />
                             </div>
                         </div>
                     </Parallax>

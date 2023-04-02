@@ -59,7 +59,7 @@ export default function Projects({modalOpen, modalClosed, isMobile}) {
                         leaveFrom="opacity-100 rotate-0 scale-100"
                         leaveTo="opacity-0 scale-95"
                     >
-                        <Dialog.Panel className="px-44 py-80 sm:px-72 lg:px-80  w-full rounded border border-zinc-800 max-w-md transform overflow-hidden align-middle shadow-xl transition-all">
+                        <Dialog.Panel className="px-44 py-80 sm:px-72 lg:px-80  w-full rounded border border-zinc-600 max-w-md transform overflow-hidden align-middle shadow-xl transition-all">
                             <ProjectModal
                             projectView={reponse} 
                             modalClosed={()=>{

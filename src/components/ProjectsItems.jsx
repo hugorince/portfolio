@@ -1,9 +1,11 @@
+import { motion } from "framer-motion";
+
 export default function ProjectsItems({projectClicked, isMobile}){
 
     const projects = require('./ProjectsList.json');
     
     const projs = projects.map((project) => {
-        return <div key={project.name} className='flex flex-col space-y-8 justify-center items-center' onClick={() => {
+        return <motion.div key={project.name} className='flex flex-col space-y-8 justify-center items-center' onClick={() => {
             projectClicked(project.name);
         }}>
             
@@ -25,7 +27,7 @@ export default function ProjectsItems({projectClicked, isMobile}){
                 />
             </div>
             </div>
-        </div>
+        </motion.div>
       });
         return (
         <>

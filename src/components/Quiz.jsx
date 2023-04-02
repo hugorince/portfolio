@@ -4,6 +4,7 @@ import QuizResult from "./QuizResult";
 import Background from "./Background";
 import { motion } from "framer-motion";
 import QuizButtons from "./QuizButtons";
+import MovingText from 'react-moving-text';
 import ModalQuiz from "./ModalQuiz";
 
 
@@ -37,7 +38,6 @@ const Quiz = ({state, onShow, isMobile}) => {
     }
 
     const nextQuestion = (event) => {
-
         
         if (event.target.value === 'geography'){
             setOption1(question2[0]);
@@ -102,17 +102,32 @@ const Quiz = ({state, onShow, isMobile}) => {
                         <Background />
                         </div>
                         <div className="flex flex-col w-64 space-y-4 justify-center items-center absolute" >
-                            <h1 className="text-3xl font-bold text-zinc-800">Hey, let's play !</h1>
-                            <h2 className="text-2xl font-bold italic text-zinc-800">do you prefer?</h2>
-                                <motion.div className="flex flex-col space-y-4 sm:space-x-4 sm:flex-row justify-center items-center"
-                                whileTap={{ opacity: [1, 0], scale: [1, 1.1, 1]}}
-                                >
+                            <MovingText
+                            className="text-3xl font-bold text-zinc-800"
+                            type="bounce"
+                            duration="1000ms"
+                            delay="0s"
+                            direction="normal"
+                            timing="ease"
+                            iteration="1"
+                            fillMode="none"
+                            >
+                                Hey, let's play !
+                            </MovingText>
+                            <motion.div 
+                            key={'prefer'}
+                            animate={{ opacity: [0, 1]}}
+                            transition={{ duration: 1 }}
+                            className="text-2xl font-bold italic text-zinc-800">
+                                do you prefer?
+                            </motion.div>
+                                <motion.div className="flex flex-col space-y-4 sm:space-x-4 sm:flex-row justify-center items-center">
                                     <div className="sm:pt-4">
-                                    <QuizButtons content={option1} buttonAction={nextQuestion} speedAnim={0.5}/>
+                                    <QuizButtons content={option1} nextQuestion={nextQuestion} speedAnim={0.6}/>
                                     </div>
-                                    <QuizButtons content={option2} buttonAction={nextQuestion} speedAnim={0.6}/>
+                                    <QuizButtons content={option2} nextQuestion={nextQuestion} speedAnim={0.7}/>
                                     <div style={{display: firstQuest ? 'block' : 'none'}}>
-                                    <QuizButtons content={option3} buttonAction={nextQuestion} speedAnim={0.7}/>
+                                    <QuizButtons content={option3} nextQuestion={nextQuestion} speedAnim={0.8}/>
                                     </div>
                                 </motion.div>
                         </div>

@@ -13,16 +13,16 @@ function App() {
     return (
       <>
       <ParallaxProvider >
-      <Quiz 
-      state={showPortfolio} 
-      onShow={() => setShowPortfolio(true)} 
-      isMobile={isMobile}
-      />
-      <Portfolio 
-      state={showPortfolio} 
-      quizAgain={() => setShowPortfolio(false)}
-      isMobile={isMobile}
-      />
+        <Quiz 
+        state={showPortfolio} 
+        onShow={() => setShowPortfolio(true)} 
+        isMobile={isMobile}
+        />
+        <Portfolio 
+        state={showPortfolio} 
+        quizAgain={() => setShowPortfolio(false)}
+        isMobile={isMobile}
+        />
       </ParallaxProvider>
       </>
     );
