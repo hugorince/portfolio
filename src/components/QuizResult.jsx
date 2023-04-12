@@ -29,17 +29,17 @@ export default function QuizResult({quizResult, resetQuiz, resultView, isMobile}
                                             You may like this <a className='font-bold italic'>project</a> 😉
                                     </MovingText>
                                 </motion.div>
-                                <div className='drop-shadow sm:hover:drop-shadow-xl sm:hover:scale-105 sm:transition'>
+                                <div className='sm:hover:scale-105 sm:transition'>
                                     <motion.div 
                                         key={projects[i].id}
                                         initial={{ scale: 0, rotate: -90 }}
                                         animate={{ opacity: [0, 1], scale: [1, 1.1, 1], rotate: 0 }}
                                         transition={{ duration: 0.6 }}
-                                        className="overflow-hidden cursor-pointer relative group w-64 h-64 border border-zinc-800" 
+                                        className="overflow-hidden cursor-pointer relative group w-64 h-64 border border-zinc-700" 
                                         onClick={()=>resultView(projects[i].name)}>
-                                        {isMobile ? <div></div> : <div className="z-50 opacity-0 group-hover:opacity-100 transition duration-300 ease-in-out cursor-pointer absolute from-zinc-600 to-transparent bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
+                                        {isMobile ? <div></div> : <div className="absolute z-50 opacity-0 group-hover:opacity-100 transition  cursor-pointer from-zinc-600 bg-gradient-to-t inset-x-0 -bottom-2 pt-30 text-white flex items-end">
                                             <div>
-                                                <div className="transform-gpu p-4 space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-6 transform transition duration-300 ease-in-out">
+                                                <div className="p-4 space-y-3 text-xl group-hover:opacity-100 group-hover:translate-y-0 translate-y-4 pb-6 transform transition">
                                                     <div className="italic">{quizResult}</div>
                                                 </div>
                                             </div>
