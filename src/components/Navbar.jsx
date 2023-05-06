@@ -1,19 +1,16 @@
 import Menu from "./Menu";
 import MenuDropDown from "./MenuDropDown";
 
-const Navbar = ({quizAgain, isMobile}) => {
-    
-    return (
+const Navbar = ({ quizAgain, isMobile }) => {
+  return (
     <>
-    { isMobile ? <MenuDropDown quizAgain={quizAgain} />
-    
-     : <Menu quizAgain={quizAgain}/> }  
+      {isMobile ? (
+        <MenuDropDown quizAgain={quizAgain} />
+      ) : (
+        <Menu quizAgain={quizAgain} />
+      )}
     </>
-);
+  );
 };
 
 export default Navbar;
-
-
-
-
