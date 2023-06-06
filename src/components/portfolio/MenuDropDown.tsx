@@ -2,7 +2,11 @@ import { Icon } from "@iconify/react";
 import { useState } from "react";
 import { motion } from "framer-motion";
 
-export default function MenuDropDown({ quizAgain }) {
+type MenuDropDownProps = {
+  quizAgain: () => void;
+};
+
+export default function MenuDropDown({ quizAgain }: MenuDropDownProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const handleClick = () => {

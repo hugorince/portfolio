@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
 
-export default function ProjectsItems({ projectClicked, isMobile }) {
+type ProjectsItemsProps = {
+  isMobile: boolean;
+  projectClicked: (e: string) => void;
+};
+
+export default function ProjectsItems({
+  isMobile,
+  projectClicked,
+}: ProjectsItemsProps) {
   const projects = require("./ProjectsList.json");
 
   const projs = projects.map((project) => {

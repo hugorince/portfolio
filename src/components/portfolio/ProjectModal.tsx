@@ -1,11 +1,18 @@
-import QuizButtons from "./QuizButtons";
+import QuizButtons from "../quiz/QuizButtons";
+
+type ProjectModalProps = {
+  modalClosed: () => void;
+  resetQuiz: () => void;
+  projectView: string;
+  quizEnd: boolean;
+};
 
 export default function ProjectModal({
   modalClosed,
-  modalQuizClicked,
+  resetQuiz,
   projectView,
   quizEnd,
-}) {
+}: ProjectModalProps) {
   const projects = require("./ProjectsList.json");
 
   for (let i in projects) {
@@ -18,7 +25,7 @@ export default function ProjectModal({
               <div className="">
                 {quizEnd ? (
                   <QuizButtons
-                    nextQuestion={modalQuizClicked}
+                    buttonAction={resetQuiz}
                     content={"Go to Portfolio"}
                     speedAnim={0.5}
                   />
@@ -72,7 +79,7 @@ export default function ProjectModal({
                     <p className="text-sm text-gray-700">
                       {projects[i].description}
                     </p>
-                    {images.map((image) => (
+                    {images.map((image: string) => (
                       <img
                         src={image}
                         key={image}

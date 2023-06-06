@@ -1,12 +1,22 @@
 import { Dialog, Transition } from "@headlessui/react";
-import { Fragment, useState } from "react";
-import ProjectModal from "./ProjectModal";
+import { Fragment } from "react";
+import ProjectModal from "../portfolio/ProjectModal";
 
-export default function ModalQuiz({ reset, projectViewed, res }) {
+type ModalQuizProps = {
+  resetQuiz: () => void;
+  quizResult: string;
+  showResult: boolean;
+};
+
+export default function ModalQuiz({
+  resetQuiz,
+  quizResult,
+  showResult,
+}: ModalQuizProps) {
   return (
     <>
-      <Transition appear show={res} as={Fragment}>
-        <Dialog as="div" className="relative z-10" onClose={reset}>
+      <Transition appear show={showResult} as={Fragment}>
+        <Dialog as="div" className="relative z-10" onClose={resetQuiz}>
           <Transition.Child
             as={Fragment}
             enter="ease-out duration-300"
@@ -32,9 +42,10 @@ export default function ModalQuiz({ reset, projectViewed, res }) {
               >
                 <Dialog.Panel className="px-46 py-80 lg:px-72 lg:py-72 w-full rounded border border-zinc-800 max-w-md transform overflow-hidden align-middle shadow-xl transition-all">
                   <ProjectModal
-                    projectView={projectViewed}
-                    modalQuizClicked={reset}
-                    quizEnd={res}
+                    projectView={quizResult}
+                    resetQuiz={resetQuiz}
+                    quizEnd={showResult}
+                    modalClosed={() => {}}
                   />
                 </Dialog.Panel>
               </Transition.Child>

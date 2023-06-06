@@ -1,7 +1,12 @@
 import Menu from "./Menu";
 import MenuDropDown from "./MenuDropDown";
 
-const Navbar = ({ quizAgain, isMobile }) => {
+type NavBarProps = {
+  quizAgain: () => void;
+  isMobile: boolean;
+};
+
+const Navbar = ({ quizAgain, isMobile }: NavBarProps) => {
   return (
     <>
       {isMobile ? (

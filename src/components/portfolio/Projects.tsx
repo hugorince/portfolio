@@ -5,7 +5,17 @@ import { Dialog, Transition } from "@headlessui/react";
 import { Parallax } from "react-scroll-parallax";
 import { useMediaQuery } from "react-responsive";
 
-export default function Projects({ modalOpen, modalClosed, isMobile }) {
+type ProjectsProps = {
+  modalOpen: () => void;
+  modalClosed: () => void;
+  isMobile: boolean;
+};
+
+export default function Projects({
+  modalOpen,
+  modalClosed,
+  isMobile,
+}: ProjectsProps) {
   const [projectClicked, setProjectClicked] = useState(false);
   const [reponse, setReponse] = useState("");
   const isSM = useMediaQuery({ query: "(max-width: 1000px)" });

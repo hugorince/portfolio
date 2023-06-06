@@ -3,13 +3,20 @@ import QuizButtons from "./QuizButtons";
 import { motion } from "framer-motion";
 import MovingText from "react-moving-text";
 
+type QuizResultTypes = {
+  quizResult: string;
+  resetQuiz: () => void;
+  setShowResult: () => void;
+  isMobile: boolean;
+};
+
 export default function QuizResult({
   quizResult,
   resetQuiz,
-  resultView,
+  setShowResult,
   isMobile,
-}) {
-  const projects = require("./ProjectsList.json");
+}: QuizResultTypes) {
+  const projects = require("../portfolio/ProjectsList.json");
   for (let i in projects) {
     if (projects[i].name === quizResult) {
       return (
@@ -44,7 +51,7 @@ export default function QuizResult({
                   animate={{ opacity: [0, 1], scale: [1, 1.1, 1], rotate: 0 }}
                   transition={{ duration: 0.6 }}
                   className="overflow-hidden cursor-pointer relative group w-64 h-64 border border-zinc-700"
-                  onClick={() => resultView(projects[i].name)}
+                  onClick={setShowResult}
                 >
                   {isMobile ? (
                     <div></div>
@@ -70,7 +77,7 @@ export default function QuizResult({
             </div>
             <div className="flex items-center justify-center mt-8">
               <QuizButtons
-                nextQuestion={resetQuiz}
+                buttonAction={resetQuiz}
                 content={"Skip to portfolio"}
                 speedAnim={0.7}
               />

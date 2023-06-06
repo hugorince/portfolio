@@ -1,6 +1,11 @@
 import { Icon } from "@iconify/react";
 import { motion } from "framer-motion";
-export default function Menu({ quizAgain }) {
+
+type quizAgainProps = {
+  quizAgain: () => void;
+};
+
+export default function Menu({ quizAgain }: quizAgainProps) {
   return (
     <>
       <div className="z-10 fixed bg-zinc-100 w-screen py-4 sm:w-36 sm:bg-transparent sm:px-4">

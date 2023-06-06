@@ -1,6 +1,6 @@
 import "./App.css";
-import Quiz from "./components/Quiz";
-import Portfolio from "./components/Portfolio";
+import Quiz from "./components/quiz/Quiz";
+import Portfolio from "./components/portfolio/Portfolio";
 import { useState } from "react";
 import React from "react";
 import { ParallaxProvider } from "react-scroll-parallax";
@@ -14,12 +14,12 @@ function App() {
     <>
       <ParallaxProvider>
         <Quiz
-          state={showPortfolio}
-          onShow={() => setShowPortfolio(true)}
+          showPortfolio={showPortfolio}
+          setShowPortfolio={() => setShowPortfolio(true)}
           isMobile={isMobile}
         />
         <Portfolio
-          state={showPortfolio}
+          showPortfolio={showPortfolio}
           quizAgain={() => setShowPortfolio(false)}
           isMobile={isMobile}
         />

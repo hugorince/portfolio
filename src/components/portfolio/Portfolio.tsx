@@ -4,13 +4,19 @@ import Navbar from "./Navbar";
 import { useState } from "react";
 import { Parallax } from "react-scroll-parallax";
 
-const Portfolio = ({ state, quizAgain, isMobile }) => {
+type PortfolioProps = {
+  showPortfolio: boolean;
+  quizAgain: () => void;
+  isMobile: boolean;
+};
+
+const Portfolio = ({ showPortfolio, quizAgain, isMobile }: PortfolioProps) => {
   const [modalUp, setModalUp] = useState(false);
 
   return (
     <>
       <div className="w-screen bg-zinc-100">
-        <div style={{ display: state ? "block" : "none" }}>
+        <div style={{ display: showPortfolio ? "block" : "none" }}>
           <div className="bg-zinc-100 ">
             <div style={{ display: modalUp ? "none" : "block" }}>
               <Navbar quizAgain={quizAgain} isMobile={isMobile} />
