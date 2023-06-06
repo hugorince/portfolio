@@ -11,7 +11,7 @@ export default function ProjectsItems({
 }: ProjectsItemsProps) {
   const projects = require("./ProjectsList.json");
 
-  const projs = projects.map((project) => {
+  const projs = projects.map((project: any) => {
     return (
       <motion.div
         key={project.id}

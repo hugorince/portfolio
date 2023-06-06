@@ -4,7 +4,7 @@ import QuizResult from "./QuizResult";
 import Background from "./Background";
 import { motion } from "framer-motion";
 import QuizButtons from "./QuizButtons";
-import MovingText from "react-moving-text";
+//import MovingText from "react-moving-text";
 import ModalQuiz from "./ModalQuiz";
 import { question1, nextQuestion } from "./quizLogic";
 
@@ -46,18 +46,16 @@ const Quiz = ({ showPortfolio, setShowPortfolio, isMobile }: QuizProps) => {
                 <Background />
               </div>
               <div className="flex flex-col w-64 space-y-4 justify-center items-center absolute">
-                <MovingText
+                <motion.div
                   className="text-3xl font-bold text-zinc-800"
-                  type="bounce"
-                  duration="1000ms"
-                  delay="0s"
-                  direction="normal"
-                  timing="ease"
-                  iteration="1"
-                  fillMode="none"
+                  animate={{
+                    y: [-100, 10, 0],
+                    scale: [0, 1.1, 1],
+                  }}
+                  transition={{ duration: 0.8 }}
                 >
                   Hey, let's play !
-                </MovingText>
+                </motion.div>
                 <motion.div
                   key={"prefer"}
                   animate={{ opacity: [0, 1] }}

@@ -6,18 +6,12 @@ import { Parallax } from "react-scroll-parallax";
 import { useMediaQuery } from "react-responsive";
 
 type ProjectsProps = {
-  modalOpen: () => void;
-  modalClosed: () => void;
   isMobile: boolean;
 };
 
-export default function Projects({
-  modalOpen,
-  modalClosed,
-  isMobile,
-}: ProjectsProps) {
+export default function Projects({ isMobile }: ProjectsProps) {
   const [projectClicked, setProjectClicked] = useState(false);
-  const [reponse, setReponse] = useState("");
+  const [projectView, setProjectView] = useState("");
   const isSM = useMediaQuery({ query: "(max-width: 1000px)" });
 
   return (
@@ -36,9 +30,8 @@ export default function Projects({
             <ProjectsItems
               isMobile={isMobile}
               projectClicked={(name) => {
-                setReponse(name);
+                setProjectView(name);
                 setProjectClicked(true);
-                modalOpen();
               }}
             />
           </div>
@@ -75,11 +68,12 @@ export default function Projects({
                 >
                   <Dialog.Panel className="px-44 py-80 sm:px-72 lg:px-80  w-full rounded border border-zinc-600 max-w-md transform overflow-hidden align-middle shadow-xl transition-all">
                     <ProjectModal
-                      projectView={reponse}
+                      projectView={projectView}
                       modalClosed={() => {
                         setProjectClicked(false);
-                        modalClosed();
                       }}
+                      resetQuiz={() => {}}
+                      quizEnd={false}
                     />
                   </Dialog.Panel>
                 </Transition.Child>
