@@ -107,7 +107,7 @@ export default function ProjectModal({
                 <p className="text-sm text-gray-700">{project.description}</p>
                 {project.img2.map((image: string) => (
                   <img
-                    alt="project view"
+                    alt=""
                     src={image}
                     key={image}
                     className="border border-zinc-800"

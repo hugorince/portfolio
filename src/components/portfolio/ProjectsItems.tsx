@@ -35,7 +35,7 @@ export default function ProjectsItems({
 
           <div>
             <img
-              alt={project.name}
+              alt=""
               className="object-cover w-48 h-48 sm:w-46 sm:h-46 w-full aspect-square hover:opacity-60 transition ease-in-out"
               src={project.img}
             />
