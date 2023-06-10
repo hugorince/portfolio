@@ -8,18 +8,17 @@ export default function Home() {
           <div>
             <div className="animate-bounce">👋</div>
             <h1 className="font-bold text-2xl text-zinc-800">Hi, I'm Hugo </h1>
-            <p className=" text-2xl text-zinc-800 italic ">
+            <h2 className=" text-2xl text-zinc-800 italic ">
               a{" "}
-              <a className="font-bold text-yellow-400">
+              <span className="font-bold text-yellow-400">
                 student software developer
-              </a>
+              </span>
               .
-            </p>
+            </h2>
           </div>
           <p className="text-xl">
             From an artistic background, I've worked 7 years as a{" "}
-            <a className="font-bold">video editor</a> and{" "}
-            <a className="font-bold">motion designer</a>. <br></br>In October
+            <b>video editor</b> and <b>motion designer</b>. <br></br>In October
             2022, I joined{" "}
             <a
               className="text-rose-400 font-bold hover:text-rose-600"
@@ -31,14 +30,15 @@ export default function Home() {
             </a>
             , an inclusive programing school where I'm self-learning computer
             science by making projects on several technologies. I like{" "}
-            <a className="font-semibold text-blue-400">clean</a> and{" "}
-            <a className="font-semibold text-green-400">well-organized</a> code.
+            <span className="font-semibold text-blue-400">clean</span> and{" "}
+            <span className="font-semibold text-green-400">well-organized</span>{" "}
+            code.
             <br></br>I'm looking for a{" "}
-            <a className="font-bold">one year apprenticeship</a> in Paris as a
-            full-stack developer.
+            <span className="font-bold">one year apprenticeship</span> in Paris
+            as a full-stack developer.
           </p>
 
-          <p className="text-zinc-800 text-2xl">
+          <h2 className="text-zinc-800 text-2xl">
             Feel free to{" "}
             <a
               className="font-bold text-purple-400 hover:text-purple-600"
@@ -48,7 +48,7 @@ export default function Home() {
             >
               contact me
             </a>
-          </p>
+          </h2>
           <div className="flex flex-col space-y-2">
             <p></p>
             <div className="hidden sm:block sm:flex sm:space-x-4">
