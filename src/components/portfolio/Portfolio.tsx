@@ -12,7 +12,7 @@ type PortfolioProps = {
 const Portfolio = ({ showPortfolio, quizAgain, isMobile }: PortfolioProps) => {
   return (
     <>
-      <div className="w-screen bg-zinc-100">
+      <div className="bg-zinc-100">
         <div style={{ display: showPortfolio ? "block" : "none" }}>
           <div className="bg-zinc-100 ">
             <Navbar quizAgain={quizAgain} isMobile={isMobile} />

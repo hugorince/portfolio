@@ -33,9 +33,6 @@ export default function Home() {
             <span className="font-semibold text-blue-400">clean</span> and{" "}
             <span className="font-semibold text-green-400">well-organized</span>{" "}
             code.
-            <br></br>I'm looking for a{" "}
-            <span className="font-bold">one year apprenticeship</span> in Paris
-            as a full-stack developer.
           </p>
 
           <h2 className="text-zinc-800 text-2xl">
